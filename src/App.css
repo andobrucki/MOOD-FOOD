@@ -1,0 +1,73 @@
+#root {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
+}
+
+body {
+	background: rgb(246, 217, 242);
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/* 
+.wavy {
+	animation-name: wavy;
+	animation-duration: 1.3s;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+	position: relative;
+	top: 0;
+	left: 0;
+  }
+  @keyframes wavy {
+	0% {
+	  top: 0px;
+	}
+	50% {
+	  top: -15px;
+	}
+	100% {
+	  top: 0px;
+	}
+  } */
+
+/* .logo {
+	height: 2rem; */
+	
+	/* padding: 1.5em;
+	margin: 0 auto;
+	willht: 5rem;
+	padding: 1.5em;-change: filter;
+	transition: filter 300ms; */
+	/* display: inline; */
+/* } */
+
+.logo:hover {
+	filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+/* @keyframes logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.logo {
+		animation: logo-spin infinite 20s linear;
+	}
+} */
+/* 
+.wrapper {
+	width: 80%;
+	background-color: #dadada1f;
+	border-radius: 5%;
+	box-shadow: 0px 0px 13px 5px rgba(90, 89, 89, 0.37);
+	padding: 2rem;
+} */

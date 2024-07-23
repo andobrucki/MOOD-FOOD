@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --morning-bg-color: #CFFAFE; /* Example color for morning */
+    --afternoon-bg-color: #FFFFFF; /* Example color for afternoon */
+    --evening-bg-color: #2B2E4A; /* Example color for evening */
+    --default-bg-color: #ECE9E6;  /* Default background color */
+}
+
+/* .morning {
+    @apply bg-yellow-100 text-yellow-600;
+}
+
+.afternoon {
+    @apply bg-orange-100 text-orange-600;
+}
+
+.evening {
+    @apply bg-purple-100 text-purple-600;
+} */
