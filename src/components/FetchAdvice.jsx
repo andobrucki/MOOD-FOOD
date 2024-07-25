@@ -1,18 +1,27 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+//! FetchAdvice component
+// FetchAdvice component to fetch advice from the API
 
 const FetchAdvice = () => {
 	const [advice, setAdvice] = useState(''); //state to store advice
 
-	const getAdvice = async () => {
-		const response = await axios.get('https://api.adviceslip.com/advice');
-		const advice = response.data.slip.advice; // Assuming the API response structure
-		setAdvice(advice); // Update state with fetched advice
-	};
+	useEffect(() => {
+		axios
+			.get('https://api.adviceslip.com/advice')
+			.then((response) => {
+				setAdvice(response.data.slip.advice); // Update state with fetched advice
+			})
+			.catch((error) => {
+				console.error('Error fetching advice: ', error);
+			});
+	}, []);
+
 	return (
-		<div>
-			<button onClick={getAdvice}>Get advice</button>
-			<p>{advice}</p>
+		<div className="flex flex-col items-center p-5">
+			{/* <h2 className="text-2xl underline font-normal mb-4 mt-10">Advice</h2> */}
+			<p className="text-3xl font-light px-2 py-5">{advice}</p>
 		</div>
 	);
 };

@@ -8,7 +8,6 @@ const MoodContext = createContext();
 // Initial State
 const initialState = {
 	mood: '', // Stores the user's current mood
-	data: null, // Stores the data fetched from the external API based on the user's mood
 	moods: {
 		happy: '#fde047',
 		relaxed: '#a7f3d0',
@@ -19,10 +18,9 @@ const initialState = {
 		angry: '#ef4444',
 		excited: '#fb923c',
 	}, // Stores the colors associated with each mood
-	uplifting: false,
 	timeOfDay: '', // Stores the current time of day (morning, afternoon, or evening)
-	defaultBgColor: '#ECE9E6',
 	nextStep: '',
+	videoId: '', // Stores the video ID for the music player
 };
 
 // Reducer Function
@@ -32,17 +30,13 @@ const moodReducer = (state, action) => {
 			return {
 				...state,
 				mood: action.payload,
-				uplifting: false,
-			};
-		case 'SET_DATA':
-			return {
-				...state,
-				mood: action.payload,
 			};
 		case 'SET_TIME_OF_DAY':
 			return { ...state, timeOfDay: action.payload }; // Set the time of day
-			case 'SET_NEXT_STEP':
-				return {...state, nextStep: action.payload}; // Set the next step
+		case 'SET_NEXT_STEP':
+			return { ...state, nextStep: action.payload }; // Set the next step
+		case 'SET_VIDEO_ID':
+			return { ...state, videoId: action.payload }; // Set the video ID
 		default:
 			return state;
 	}

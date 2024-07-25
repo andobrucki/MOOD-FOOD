@@ -1,29 +1,34 @@
 import './App.css';
-import MoodForm from './components/MoodPickerForm';
-import { MoodDisplay } from './components/MoodDisplay';
-import MoodPrompt from './components/MoodPrompt';
-import Header from './components/Header';
-import './App.css';
-import TimeOfDay from './components/TimeOfDay';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useContext } from 'react';
+import { MoodProvider, MoodContext } from './context/MoodContext';
+import Home from './components/Home';
 import FetchAdvice from './components/FetchAdvice';
-import FetchMusic from './components/FetchMusic';
-// import RateMood from './components/Rating';
+import FetchInfo from './components/FetchInfo';
+import MusicPlayer from './components/MusicPlayer';
 
 //! App component
 
 const App = () => {
+	const {state} = useContext(MoodContext);
 	return (
-		<div className="outer-container box-border flex justify-center items-center min-h-screen">
-			<div className="inner-container flex flex-col items-center font-josefin w-3/5 bg-custom-bg p-8">
-				<Header />
-				<TimeOfDay />
-				<MoodForm />
-				<MoodDisplay />
-				<MoodPrompt />
-				{/* <FetchAdvice /> */}
-				{/* <FetchMusic searchQuery="relaxation" /> */}
-			</div>
-		</div>
+		<MoodProvider>
+			<Router>
+				<div className="outer-container box-border flex justify-center items-center min-h-screen border-none shadow-2xl rounded-2xl p-5 m-10">
+					<div className="inner-container flex flex-col items-center font-josefin font-normal w-3/5 ">
+						<Routes>
+							<Route path="/" element={<Home />} />
+							<Route path="/advice" element={<FetchAdvice />} />
+							<Route
+								path="/music"
+								element={<MusicPlayer mood={state.mood}/>}
+							/>
+							<Route path="/learn-more" element={<FetchInfo />} />
+						</Routes>
+					</div>
+				</div>
+			</Router>
+		</MoodProvider>
 	);
 };
 

@@ -1,47 +1,33 @@
-import ReactPlayer from 'react-player/youtube';
-import { useState, useEffect } from 'react';
+const API_KEY = import.meta.env.VITE_API_KEY;
+const YOUTUBE_SEARCH_URL = `https://www.googleapis.com/youtube/v3/search`;
 
-const FetchMusic = ({ searchQuery }) => {
-	// Function to search YouTube for videos
-	async function searchYouTube(query) {
-		const apiKey = import.meta.env.VITE_API_KEY;
-		const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(
-			query
-		)}&key=${apiKey}&type=video`;
-
-		const response = await fetch(url);
-		const data = await response.json();
-		if (data.items.length > 0) {
-			const videoId = data.items[0].id.videoId;
-			return `https://www.youtube.com/watch?v=${videoId}`;
-		} else {
-			return null; // No results found
-		}
-	}
-
-	function YouTubePlayer({ searchQuery }) {
-		const [videoUrl, setVideoUrl] = useState('');
-
-		useEffect(() => {
-			async function fetchVideo() {
-				const url = await searchYouTube(searchQuery);
-				setVideoUrl(url);
-			}
-			fetchVideo();
-		}, [searchQuery]); // Only run once when the component mounts // has missing dependency Search Query
-
-		return (
-			<div>
-				<button onClick={searchYouTube}>Get Music</button>
-				{videoUrl ? (
-					<ReactPlayer url={videoUrl} playing controls />
-				) : (
-					'Loading...'
-				)}
-			</div>
-		);
-	}
-	return <YouTubePlayer searchQuery={searchQuery} />;
+const moodSearchTerms = {
+	happy: 'upbeat music',
+	relaxed: 'active music',
+	fearful: 'calm instrumental',
+	astonished: 'energetic music',
+	sad: 'uplifting songs',
+	frustrated: 'motivating music',
+	angry: 'soothing songs',
+	excited: 'relaxing music',
 };
+// Function to fetch music based on mood
+export const fetchMusic = async (mood) => {
+	try {
+    const searchTerm = moodSearchTerms[mood] || 'music'; // Default search term if mood not found
+    const response = await fetch(`${YOUTUBE_SEARCH_URL}?part=snippet&q=${encodeURIComponent(searchTerm)}&type=video&key=${API_KEY}`);
+		const data = await response.json();
+		console.log(data);
 
-export default FetchMusic;
+		if (data.items && data.items.length > 0) {
+			//REturn the first video
+			return data.items[0].id.videoId;
+		} else {
+			console.error('No videos found');
+			return null;
+		}
+	} catch (error) {
+		console.error('Error fetching music', error);
+		return null;
+	}
+};
