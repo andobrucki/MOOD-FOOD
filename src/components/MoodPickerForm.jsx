@@ -4,7 +4,6 @@ import { useContext, useEffect } from 'react';
 //! MoodForm component // choosing mood from dropdown
 // Determine the time of day color based on the current time of day.
 // Combine the mood color and time of day color to create a gradient.
-// Set the body's background color to the gradient:
 // TOP: mood color
 // BOTTOM: time of day color
 
@@ -16,13 +15,7 @@ const MoodForm = () => {
 	const timeOfDayColors = {
 		morning: '#cffafe',
 		afternoon: '#FFFFFF',
-		evening: '#2B2E4A',
-	};
-
-	const timeOfDayFontColors = {
-		morning: '#cffafe',
-		afternoon: '#FFFFFF',
-		evening: '#2B2E4A',
+		evening: '#525fd7',
 	};
 
 	// Define a default color for the gradient when no mood is selected

@@ -10,7 +10,7 @@ import MusicPlayer from './components/MusicPlayer';
 //! App component
 
 const App = () => {
-	const {state} = useContext(MoodContext);
+	const { state } = useContext(MoodContext);
 	return (
 		<MoodProvider>
 			<Router>
@@ -21,7 +21,7 @@ const App = () => {
 							<Route path="/advice" element={<FetchAdvice />} />
 							<Route
 								path="/music"
-								element={<MusicPlayer mood={state.mood}/>}
+								element={<MusicPlayer mood={state.mood} />}
 							/>
 							<Route path="/learn-more" element={<FetchInfo />} />
 						</Routes>

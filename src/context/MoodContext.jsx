@@ -1,5 +1,6 @@
 import { createContext, useReducer } from 'react';
 
+//! MoodContext Component
 // Set up context to manage the mood state across the application
 
 // Create Context

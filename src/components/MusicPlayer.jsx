@@ -2,6 +2,9 @@ import ReactPlayer from 'react-player';
 import { useContext } from 'react';
 import { MoodContext } from '../context/MoodContext';
 
+//! MusicPlayer component
+// MusicPlayer component to display the music player
+
 const MusicPlayer = () => {
 	const { state } = useContext(MoodContext);
 	const { videoId, mood } = state;
