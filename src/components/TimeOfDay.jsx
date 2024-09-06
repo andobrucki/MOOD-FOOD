@@ -49,27 +49,4 @@ const TimeOfDay = () => {
 	);
 };
 
-{
-	/* </div> )
-			{state.timeOfDay === 'morning' && (
-				<div className="text-2xl block text-gray-800 font-light p-5">
-					<h1 className='text-3xl'>Good Morning,</h1>
-					<h2>how are you feeling today?</h2>
-				</div>
-			)}
-			{state.timeOfDay === 'afternoon' && (
-				<div className="text-2xl block text-gray-800 font-light p-5">
-					<h1 className='text-3xl'>Good Afternoon,</h1>
-					<h2>how are you feeling today?</h2>
-				</div>
-			)}
-			{state.timeOfDay === 'evening' && (
-				<div className="text-2xl block text-gray-800 light p-5">
-					<h1 className='text-3xl'>Good Evening,</h1>
-					<h2>how are you feeling today?</h2>
-				</div>
-			)}
-		</div> */
-}
-
 export default TimeOfDay;

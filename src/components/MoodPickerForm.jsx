@@ -1,7 +1,7 @@
 import { MoodContext } from '../context/MoodContext';
 import { useContext, useEffect } from 'react';
 
-//! MoodForm component // choosing mood from dropdown
+//! MoodForm component 
 // Determine the time of day color based on the current time of day.
 // Combine the mood color and time of day color to create a gradient.
 // TOP: mood color
@@ -22,6 +22,7 @@ const MoodForm = () => {
 	const defaultColor = '#f6cdf2';
 
 	// Set the body's background color based on the selected mood and time of day
+	// Could move that out into a separate component
 	useEffect(() => {
 		// Get the mood color and time of the day from the context
 		// Define moodColor based on the selected mood

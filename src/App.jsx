@@ -14,7 +14,7 @@ const App = () => {
 	return (
 		<MoodProvider>
 			<Router>
-				<div className="outer-container box-border flex justify-center items-center min-h-screen border-none shadow-2xl rounded-2xl p-5 m-10">
+				<div className="outer-container box-border flex justify-center items-center min-h-screen border-none shadow-2xl rounded-2xl p-5 mt-20">
 					<div className="inner-container flex flex-col items-center font-josefin font-normal w-3/5 ">
 						<Routes>
 							<Route path="/" element={<Home />} />

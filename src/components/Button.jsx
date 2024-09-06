@@ -7,7 +7,7 @@ const Button = ({ isActive, label, onClick }) => {
                 ${
 									isActive
 										? 'bg-gray-900 text-white hover:bg-gray-700 hover:shadow-md'
-										: 'bg-gray-300 text-gray-900 hover:bg-gray-100 hover:shadow-md'
+										: 'bg-white text-gray-900 hover:bg-gray-100 hover:shadow-md'
 								}`}
 			onClick={onClick}
 		>
