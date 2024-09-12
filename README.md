@@ -1,5 +1,4 @@
 # MOOD FOOD
-https://mood-food.onrender.com/
 
 ## Summary
 
