@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import Header from './Header';
 import TimeOfDay from './TimeOfDay';
 import MoodForm from './MoodPickerForm';

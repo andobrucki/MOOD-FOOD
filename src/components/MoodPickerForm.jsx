@@ -1,7 +1,7 @@
 import { MoodContext } from '../context/MoodContext';
 import { useContext, useEffect } from 'react';
 
-//! MoodForm component 
+//! MoodForm component
 // Determine the time of day color based on the current time of day.
 // Combine the mood color and time of day color to create a gradient.
 // TOP: mood color
@@ -49,11 +49,12 @@ const MoodForm = () => {
 		<div className="flex justify-center text-gray-700 text-s">
 			<form className="w-1.5/3">
 				<select
-					className="py-4 px-5 text-gray-700 border-0 rounded-3xl shadow-lg text-base transition-all duration-300 ease-in-out bg-white outline-none appearance-none w-full focus:ring-2 focus:ring-gray-300 focus:border-transparent cursor-pointer"
+					className="py-4 px-5 text-gray-700 border-0 rounded-full shadow-lg text-base bg-white outline-none appearance-none w-full focus:border-transparent cursor-pointer"
 					value={state.mood}
 					onChange={handleChangeMood}
 				>
-					<option value="">--Select your mood--:</option>
+					<option
+					value="">Select your mood</option>
 					<option value="happy">happy</option>
 					<option value="relaxed">relaxed</option>
 					<option value="fearful">fearful</option>

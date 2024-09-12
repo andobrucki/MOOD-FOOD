@@ -14,10 +14,18 @@ const moodSearchTerms = {
 // Function to fetch music based on mood
 export const fetchMusic = async (mood) => {
 	try {
-    const searchTerm = moodSearchTerms[mood] || 'music'; // Default search term if mood not found
-    const response = await fetch(`${YOUTUBE_SEARCH_URL}?part=snippet&q=${encodeURIComponent(searchTerm)}&type=video&key=${API_KEY}`);
+		const searchTerm = moodSearchTerms[mood] || 'music'; // Default search term if mood not found
+		const url = `${YOUTUBE_SEARCH_URL}?part=snippet&q=${encodeURIComponent(
+			searchTerm
+		)}&type=video&key=${API_KEY}`;
+
+		const response = await fetch(url);
+
+		if (!response.ok) {
+			throw new Error(`Failed to fetch music, Status ${response.status}`);
+		}
+
 		const data = await response.json();
-		console.log(data);
 
 		if (data.items && data.items.length > 0) {
 			//REturn the first video

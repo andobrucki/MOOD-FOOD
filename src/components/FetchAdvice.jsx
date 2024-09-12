@@ -19,9 +19,11 @@ const FetchAdvice = () => {
 	}, []);
 
 	return (
-		<div className="flex flex-col items-center p-5">
+		<div className="flex flex-col items-center justify-center h-full w-full p-5">
 			{/* <h2 className="text-2xl underline font-normal mb-4 mt-10">Advice</h2> */}
-			<p className="text-3xl font-light px-2 py-5">{advice}</p>
+			<p className="text-2xl md:text-3xl font-light text-center leading-relaxed break-words max-w-full">
+				{advice}
+			</p>
 		</div>
 	);
 };
