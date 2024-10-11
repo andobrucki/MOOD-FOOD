@@ -1,13 +1,13 @@
 import ReactPlayer from 'react-player';
 import { useContext } from 'react';
-import { MoodContext } from '../context/MoodContext';
+import { DataContext } from '../context/Context';
 
 //! MusicPlayer component
 // MusicPlayer component to display the music player
 
 const MusicPlayer = () => {
-	const { state } = useContext(MoodContext);
-	const { videoId, mood } = state;
+	const { moodState } = useContext(DataContext);
+	const { videoId, mood } = moodState;
 
 	console.log('Video ID in MusicPlayer:', videoId); // Debugging line
 	return (
@@ -15,7 +15,7 @@ const MusicPlayer = () => {
 			<h2 className="text-2xl font-normal mb-4">
 				Listen to some music for a {mood} mood
 			</h2>
-			<div className='flex justify-center'>
+			<div className="flex justify-center">
 				{' '}
 				{videoId ? (
 					<ReactPlayer
@@ -23,7 +23,7 @@ const MusicPlayer = () => {
 						width="50%"
 						height="50%"
 						controls
-                        playing
+						playing
 					/>
 				) : (
 					<p>No video available for this mood.</p>

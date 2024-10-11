@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useContext } from 'react';
-import { MoodProvider, MoodContext } from './context/MoodContext';
+import { DataProvider, DataContext } from './context/Context';
 import Home from './components/Home';
 import FetchAdvice from './components/FetchAdvice';
 import FetchInfo from './components/FetchInfo';
@@ -10,9 +10,9 @@ import MusicPlayer from './components/MusicPlayer';
 //! App component
 
 const App = () => {
-	const { state } = useContext(MoodContext);
+	const { moodState } = useContext(DataContext);
 	return (
-		<MoodProvider>
+		<DataProvider>
 			<Router>
 				<div className="outer-container box-border flex justify-center items-center min-h-screen border-none shadow-2xl rounded-2xl p-5 mt-20">
 					<div className="inner-container flex flex-col items-center font-josefin font-normal w-3/5 ">
@@ -21,14 +21,14 @@ const App = () => {
 							<Route path="/advice" element={<FetchAdvice />} />
 							<Route
 								path="/music"
-								element={<MusicPlayer mood={state.mood} />}
+								element={<MusicPlayer mood={moodState.mood} />}
 							/>
 							<Route path="/learn-more" element={<FetchInfo />} />
 						</Routes>
 					</div>
 				</div>
 			</Router>
-		</MoodProvider>
+		</DataProvider>
 	);
 };
 

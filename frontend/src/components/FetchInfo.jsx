@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { useState, useContext } from 'react';
-import { MoodContext } from '../context/MoodContext';
+import { DataContext } from '../context/Context';
 
 //!Fetch Info component
 
 const FetchInfo = () => {
-	const { state } = useContext(MoodContext); // Get the state from the context
+	const { state } = useContext(DataContext); // Get the state from the context
 	const [wikiData, setWikiData] = useState(null); // Set the info state
 	const [loading, setLoading] = useState(false); // Add a loading state
 	const [error, setError] = useState(null); // Add an error state
@@ -57,7 +57,8 @@ const FetchInfo = () => {
 						>
 							<h3 className="text-xl font-bold">{item.title}</h3>
 							<p>{item.snippet}</p>
-							<a className="underline hover:font-bold"
+							<a
+								className="underline hover:font-bold"
 								href={`https://en.wikipedia.org/?curid=${item.pageid}`}
 								target="_blank"
 								rel="noreferrer"
