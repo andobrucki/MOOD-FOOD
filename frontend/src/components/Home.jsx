@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import Header from './Header';
 import TimeOfDay from './TimeOfDay';
 import MoodForm from './MoodPickerForm';
 import { MoodDisplay } from './MoodDisplay';
@@ -10,7 +9,6 @@ const Home = () => {
 	const { moodState } = useContext(DataContext);
 	return (
 		<div>
-			<Header />
 			<TimeOfDay />
 			<MoodForm />
 			<MoodDisplay />
