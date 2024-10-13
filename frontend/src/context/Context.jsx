@@ -3,7 +3,7 @@ import { createContext, useReducer, useEffect } from 'react';
 import { moodInitialState, moodReducer } from '../reducers/moodReducer';
 import { userInitialState, userReducer } from '../reducers/userReducer';
 
-import { getMyData } from '../api/usersApi';
+// import { getMyData } from '../api/usersApi';
 import { setAxiosDefaults } from '../utils/axiosConfig';
 
 //! Context Component
@@ -21,7 +21,7 @@ export const DataProvider = ({ children }) => {
 
 	useEffect(() => {
 		setAxiosDefaults();
-		getMyData(userDispatch);
+		// getMyData(userDispatch);
 	}, []);
 
 	return (

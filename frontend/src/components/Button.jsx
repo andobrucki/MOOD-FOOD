@@ -2,7 +2,7 @@
 import { DataContext } from '../context/Context';
 import { useContext } from 'react';
 
-const Button = ({ isActive, label, onClick }) => {
+const Button = ({ isActive, label, onClick, loading, disabled }) => {
 	const { moodState } = useContext(DataContext);
 	const moodColor = moodState.moods[moodState.mood];
 
@@ -14,7 +14,7 @@ const Button = ({ isActive, label, onClick }) => {
 									isActive
 										? 'bg-gray-900 text-white hover:bg-gray-700 hover:shadow-lg'
 										: 'bg-white text-gray-900 hover:bg-gray-100 hover:shadow-lg'
-								}`}
+								} ${disabled ? 'cursor-not-allowed opacity-50' : ''}`}
 			style={{
 				boxShadow: isActive
 					? `0 4px 8px rgba(0, 0, 0, 0.1)`
@@ -28,8 +28,9 @@ const Button = ({ isActive, label, onClick }) => {
 				e.target.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
 			}}
 			onClick={onClick}
+			disabled={disabled} // Disable if loading
 		>
-			{label}
+			{loading ? 'Signing Up...' : label}
 		</button>
 	);
 };

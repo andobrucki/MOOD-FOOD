@@ -12,10 +12,10 @@
 ## Backend
 
 **Routes**
+
 - guest route
 
 --> what features does the registered route has?
-
 
 **User authentication**
 
@@ -29,11 +29,23 @@
 
 - create user signup page and form
 - create user login page and form
-- complete form by collecting user input and save in a state
+
 - form validation
 - submit the user information to the backend (post request)
-
+- use button component inside singup and login field
 - fix navigateHome Route in frontend
+- make Layout with moodfood top / conditionally render: when logged in Good Evening etc, when not logged in only moodfood and login page
+- Signup small option, going to a new page with mood food on top
+- fix navigate home
+- remove button shadow
+-
+
+# nice to have
+
+- new font
+- nicer shadows
+- select field could be from a component library
+- nicer player
 
 ### DONE
 
@@ -48,7 +60,7 @@
 - set up user model
 - user route "/users/register"
 - user route "/users/login"
-**Controllers**
+  **Controllers**
 - register controller
 - user controller
 - logout controller

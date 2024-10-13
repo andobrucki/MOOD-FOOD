@@ -6,8 +6,8 @@ import axios from 'axios';
 // };
 
 export const setAxiosDefaults = () => {
-    const apiUrl = import.meta.env.VITE_API_URL;
-    console.log('API URL:', apiUrl); // Check the value in the console
-    axios.defaults.baseURL = apiUrl;
-    axios.defaults.withCredentials = true;
+	const apiUrl = import.meta.env.VITE_API_URL;
+	console.log('API URL:', apiUrl); // Check the value in the console
+	axios.defaults.baseURL = apiUrl;
+	axios.defaults.withCredentials = false;
 };

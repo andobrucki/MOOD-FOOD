@@ -5,7 +5,7 @@ import { DataContext } from '../context/Context';
 //!Fetch Info component
 
 const FetchInfo = () => {
-	const { state } = useContext(DataContext); // Get the state from the context
+	const { moodState } = useContext(DataContext); // Get the state from the context
 	const [wikiData, setWikiData] = useState(null); // Set the info state
 	const [loading, setLoading] = useState(false); // Add a loading state
 	const [error, setError] = useState(null); // Add an error state
@@ -28,17 +28,17 @@ const FetchInfo = () => {
 
 	useEffect(() => {
 		// Fetch data when the component mounts
-		if (state.mood) {
-			fetchWikiData(state.mood); // Fetch data based on the user's mood
+		if (moodState.mood) {
+			fetchWikiData(moodState.mood); // Fetch data based on the user's mood
 		}
-	}, [state.mood]);
+	}, [moodState.mood]);
 
 	return (
 		<div className="fetch-wiki p-4 max-w-4xl mx-auto h-full flex flex-col">
 			<h2 className="text-2xl font-bold mb-4 flex-shrink-0">
 				{' '}
 				{/*short-circuit evaluation*/}
-				Learn more about {state.mood && state.mood.toUpperCase()}
+				Learn more about {moodState.mood && moodState.mood.toUpperCase()}
 			</h2>
 
 			{/* Loading State */}
@@ -69,7 +69,7 @@ const FetchInfo = () => {
 					))}
 				</div>
 			) : (
-				!loading && <p>No information found for {state.mood}.</p>
+				!loading && <p>No information found for {moodState.mood}.</p>
 			)}
 		</div>
 	);
