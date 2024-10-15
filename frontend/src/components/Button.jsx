@@ -22,7 +22,7 @@ const Button = ({ isActive, label, onClick, loading, disabled }) => {
 				transition: 'box-shadow 0.3s ease',
 			}}
 			onMouseEnter={(e) => {
-				e.target.style.boxShadow = `0 4px 8px ${moodColor}`;
+				e.target.style.boxShadow = `0px 0px 2px ${moodColor}`;
 			}}
 			onMouseLeave={(e) => {
 				e.target.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';

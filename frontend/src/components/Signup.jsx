@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { DataContext } from '../context/Context';
 import Form from '../components/Form';
+import Button from './Button';
 import { signup } from '../api/usersApi';
 import { useNavigate } from 'react-router-dom';
 
@@ -13,6 +14,10 @@ const Signup = () => {
 		navigate('/');
 	};
 
+	const handleLoginDirect = () => {
+		navigate('/login');
+	};
+
 	const inputs = [
 		{
 			name: 'username',
@@ -21,7 +26,7 @@ const Signup = () => {
 		},
 		{
 			name: 'email',
-			placeholder: 'email',
+			placeholder: 'your@email.com',
 			defaultValue: '',
 		},
 		{
@@ -33,7 +38,10 @@ const Signup = () => {
 
 	return (
 		<div className="signup-form-container">
-			<h2 className="text-2xl font-bold mb-4">Sign up</h2>
+			<h2 className="text-2xl font-bold mb-4">Welcome!</h2>
+
+			<Button label={'Login'} onClick={handleLoginDirect} />
+			<p className="pt-6">or sign up with us</p>
 
 			<Form
 				inputs={inputs}
