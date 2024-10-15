@@ -27,11 +27,11 @@
 
 ## Frontend
 
-- create user signup page and form
-- create user login page and form
+- create logout frontend
+- style login and signup
 
 - form validation
-- submit the user information to the backend (post request)
+
 - use button component inside singup and login field
 - fix navigateHome Route in frontend
 - make Layout with moodfood top / conditionally render: when logged in Good Evening etc, when not logged in only moodfood and login page
@@ -64,3 +64,6 @@
 - register controller
 - user controller
 - logout controller
+- create user signup page and form
+- create user login page and form
+- submit the user information to the backend (post request)
