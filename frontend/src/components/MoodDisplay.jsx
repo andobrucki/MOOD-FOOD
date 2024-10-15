@@ -1,4 +1,4 @@
-import { MoodContext } from '../context/MoodContext';
+import { DataContext } from '../context/Context';
 import { useContext } from 'react';
 
 // Messages for each mood
@@ -15,9 +15,9 @@ const moodMessages = {
 
 // MoodDisplay component
 export const MoodDisplay = () => {
-	const { state } = useContext(MoodContext);
+	const { moodState } = useContext(DataContext);
 
-	const message = state.mood ? moodMessages[state.mood] : '';
+	const message = moodState.mood ? moodMessages[moodState.mood] : '';
 
 	return (
 		<div className="container flex flex-col items-center p-5 text-3xl">

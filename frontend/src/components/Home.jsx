@@ -1,20 +1,18 @@
 import { useContext } from 'react';
-import Header from './Header';
 import TimeOfDay from './TimeOfDay';
 import MoodForm from './MoodPickerForm';
 import { MoodDisplay } from './MoodDisplay';
 import MoodPrompt from './MoodPrompt';
-import { MoodContext } from '../context/MoodContext';
+import { DataContext } from '../context/Context';
 
 const Home = () => {
-	const { state } = useContext(MoodContext);
+	const { moodState } = useContext(DataContext);
 	return (
 		<div>
-			<Header />
 			<TimeOfDay />
 			<MoodForm />
 			<MoodDisplay />
-			{state.mood && <MoodPrompt />}
+			{moodState.mood && <MoodPrompt />}
 		</div>
 	);
 };

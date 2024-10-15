@@ -1,4 +1,5 @@
-import { MoodContext } from '../context/MoodContext';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { DataContext } from '../context/Context';
 import { useContext, useEffect } from 'react';
 
 //! MoodForm component
@@ -8,7 +9,7 @@ import { useContext, useEffect } from 'react';
 // BOTTOM: time of day color
 
 const MoodForm = () => {
-	const { state, dispatch } = useContext(MoodContext);
+	const { moodState, moodDispatch } = useContext(DataContext);
 	// recieve the mood colors and time of day from the context
 
 	// Define colors for different times of day
@@ -27,8 +28,8 @@ const MoodForm = () => {
 		// Get the mood color and time of the day from the context
 		// Define moodColor based on the selected mood
 		// Define timeOfDayColor based on the selected time of day
-		const moodColor = state.moods[state.mood];
-		const timeOfDayColor = timeOfDayColors[state.timeOfDay] || defaultColor;
+		const moodColor = moodState.moods[moodState.mood];
+		const timeOfDayColor = timeOfDayColors[moodState.timeOfDay] || defaultColor;
 
 		// Combine the mood color and time of day color to create a gradient
 		if (moodColor) {
@@ -37,12 +38,12 @@ const MoodForm = () => {
 			// If no mood is selected, fall back to the time of day theme
 			document.body.style.background = `linear-gradient(${defaultColor}, ${timeOfDayColor})`;
 		}
-	}, [state.mood, state.timeOfDay]);
+	}, [moodState.mood, moodState.timeOfDay]);
 	// dependencies: the effect will re-run whenever the mood, time of day change
 
 	// handle mood change
 	const handleChangeMood = (e) => {
-		dispatch({ type: 'SET_MOOD', payload: e.target.value });
+		moodDispatch({ type: 'SET_MOOD', payload: e.target.value });
 	};
 
 	return (
@@ -50,11 +51,10 @@ const MoodForm = () => {
 			<form className="w-1.5/3">
 				<select
 					className="py-4 px-5 text-gray-700 border-0 rounded-full shadow-lg text-base bg-white outline-none appearance-none w-full focus:border-transparent cursor-pointer"
-					value={state.mood}
+					value={moodState.mood}
 					onChange={handleChangeMood}
 				>
-					<option
-					value="">Select your mood</option>
+					<option value="">Select your mood</option>
 					<option value="happy">happy</option>
 					<option value="relaxed">relaxed</option>
 					<option value="fearful">fearful</option>

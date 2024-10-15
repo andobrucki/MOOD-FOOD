@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useContext } from 'react';
-import { MoodContext } from '../context/MoodContext';
+import { DataContext } from '../context/Context';
 
 //! TimeOfDay component
 // TimeOfDay component to display a greeting based on the time of day
@@ -11,7 +12,7 @@ const TimeOfDay = () => {
 		evening: 'Good Evening',
 	};
 
-	const { state, dispatch } = useContext(MoodContext);
+	const { moodState, moodDispatch } = useContext(DataContext);
 
 	// Determine the time of day based on the current time
 	useEffect(() => {
@@ -24,24 +25,24 @@ const TimeOfDay = () => {
 
 		// Set the time of day in the state
 		const timeOfDay = getTimeOfDay();
-		dispatch({ type: 'SET_TIME_OF_DAY', payload: timeOfDay });
+		moodDispatch({ type: 'SET_TIME_OF_DAY', payload: timeOfDay });
 		console.log(
 			'Greetings: ',
 			greetings,
 			'Greetings(state): ',
-			greetings[state.timeOfDay]
+			greetings[timeOfDay]
 		);
 
 		// Set the body class based on time of day
 		document.body.className = ''; // Reset existing classes
 		document.body.classList.add(timeOfDay); // Add the time of day class
-	}, [dispatch]);
+	}, [moodDispatch]);
 
 	return (
 		<div>
-			{state.timeOfDay && (
+			{moodState.timeOfDay && (
 				<div className="text-2xl block text-gray-800 font-light p-5">
-					<h1 className="text-3xl">{greetings[state.timeOfDay]},</h1>
+					<h1 className="text-3xl">{greetings[moodState.timeOfDay]},</h1>
 					<h2>how are you feeling today?</h2>
 				</div>
 			)}

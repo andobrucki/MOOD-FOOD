@@ -1,13 +1,4 @@
-import { createContext, useReducer } from 'react';
-
-//! MoodContext Component
-// Set up context to manage the mood state across the application
-
-// Create Context
-const MoodContext = createContext();
-
-// Initial State
-const initialState = {
+export const moodInitialState = {
 	mood: '', // Stores the user's current mood
 	moods: {
 		happy: '#fde047',
@@ -25,7 +16,7 @@ const initialState = {
 };
 
 // Reducer Function
-const moodReducer = (state, action) => {
+export const moodReducer = (state, action) => {
 	switch (action.type) {
 		case 'SET_MOOD':
 			return {
@@ -42,16 +33,3 @@ const moodReducer = (state, action) => {
 			return state;
 	}
 };
-
-// Provider Component
-const MoodProvider = ({ children }) => {
-	const [state, dispatch] = useReducer(moodReducer, initialState);
-
-	return (
-		<MoodContext.Provider value={{ state, dispatch }}>
-			{children}
-		</MoodContext.Provider>
-	);
-};
-
-export { MoodProvider, MoodContext };
