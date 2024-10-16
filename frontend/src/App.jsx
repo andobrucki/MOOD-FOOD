@@ -31,12 +31,13 @@ const App = () => {
 				<div className="outer-container box-border flex justify-center items-center min-h-screen border-none shadow-2xl rounded-2xl p-5 mt-20">
 					<div className="inner-container flex flex-col items-center font-josefin font-normal w-3/5 ">
 						<Routes>
-							
-							{/* Protected Routes */}
-							<Route element={<Layout />}>{/* Public Route */}
-							<Route path="/hello" element={<Hello />} />
-							<Route path="/signup" element={<Signup />} />
-							<Route path="/login" element={<Login />} />
+							{/* Public Routes */}
+							<Route element={<Layout />}>
+								<Route path="/hello" element={<Hello />} />
+								<Route path="/signup" element={<Signup />} />
+								<Route path="/login" element={<Login />} />
+
+								{/* Private Routes */}
 								<Route
 									path="/"
 									element={

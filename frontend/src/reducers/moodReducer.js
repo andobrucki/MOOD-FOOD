@@ -10,7 +10,7 @@ export const moodInitialState = {
 		angry: '#ef4444',
 		excited: '#fb923c',
 	}, // Stores the colors associated with each mood
-	timeOfDay: '', // Stores the current time of day (morning, afternoon, or evening)
+	timeOfDay: '',// Stores the current time of day (morning, afternoon, or evening)
 	nextStep: '',
 	videoId: '', // Stores the video ID for the music player
 };
