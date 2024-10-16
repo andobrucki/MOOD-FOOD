@@ -10,6 +10,12 @@ const FetchInfo = () => {
 	const [loading, setLoading] = useState(false); // Add a loading state
 	const [error, setError] = useState(null); // Add an error state
 
+	// Function to strip HTML tags
+	const stripHTML = (html) => {
+		let doc = new DOMParser().parseFromString(html, 'text/html');
+		return doc.body.textContent || '';
+	};
+
 	const fetchWikiData = async (query) => {
 		const url = `https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=${query}&origin=*`;
 
@@ -56,7 +62,7 @@ const FetchInfo = () => {
 							className="wiki-item p-4 rounded-lg shadow-md"
 						>
 							<h3 className="text-xl font-bold">{item.title}</h3>
-							<p>{item.snippet}</p>
+							<p>{stripHTML(item.snippet)}</p>
 							<a
 								className="underline hover:font-bold"
 								href={`https://en.wikipedia.org/?curid=${item.pageid}`}
