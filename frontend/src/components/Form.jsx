@@ -29,7 +29,7 @@ const Form = ({
 			{inputs.map((input) => (
 				<div key={input.name} className="info">
 					<input
-						className="w-full px-4 py-2 mt-1 border border-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent"
+						className="w-full px-4 py-2 mt-1 border border-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent"
 						name={input.name}
 						placeholder={input.placeholder}
 						onChange={handleChange}

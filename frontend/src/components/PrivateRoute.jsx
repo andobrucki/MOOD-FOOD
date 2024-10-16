@@ -8,7 +8,7 @@ const PrivateRoute = ({ children }) => {
 
 	// If user is not logged in, redirect to signup page
 	if (!userState.isUserLoggedIn) {
-		return <Navigate to="/signup" replace />;
+		return <Navigate to="/hello" replace />;
 	}
 
 	// If authenticated, render the child components

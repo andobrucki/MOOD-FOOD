@@ -29,16 +29,16 @@ export const login = async (userDispatch, formData) => {
 	}
 };
 
-// export const logout = async (userDispatch) => {
-// 	try {
-// 		await axios.get('/users/logout', {
-// 			withCredentials: true,
-// 		});
-// 		userDispatch({ type: 'LOGOUT' });
-// 	} catch (error) {
-// 		console.log(error);
-// 	}
-// };
+export const logout = async (userDispatch) => {
+	try {
+		await axios.get('/users/logout', {
+			withCredentials: true,
+		});
+		userDispatch({ type: 'LOGOUT' });
+	} catch (error) {
+		console.log(error);
+	}
+};
 
 // export const getMyData = async (userDispatch) => {
 // 	try {

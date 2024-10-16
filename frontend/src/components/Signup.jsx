@@ -39,9 +39,9 @@ const Signup = () => {
 	return (
 		<div className="signup-form-container">
 			<h2 className="text-2xl font-bold mb-4">Welcome!</h2>
-
+{/* 
 			<Button label={'Login'} onClick={handleLoginDirect} />
-			<p className="pt-6">or sign up with us</p>
+			<p className="pt-6">or sign up with us</p> */}
 
 			<Form
 				inputs={inputs}
