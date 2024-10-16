@@ -11,41 +11,21 @@
 
 ## Backend
 
-**Routes**
-
-- guest route
-
---> what features does the registered route has?
-
-**User authentication**
-
 - validation and sanitation
-- verify user
-- hash password
-- create token
-- set cookies
 
 ## Frontend
 
 - create logout frontend
-- style login and signup
-
 - form validation
-
-- use button component inside singup and login field
-- fix navigateHome Route in frontend
-- make Layout with moodfood top / conditionally render: when logged in Good Evening etc, when not logged in only moodfood and login page
-- Signup small option, going to a new page with mood food on top
-- fix navigate home
-- remove button shadow
--
+- fix: time of day from context should be received by layout component and render background accordingly
+- if going back to home page, page should re-render and offer moodpicker again
+- fix login on frontend
 
 # nice to have
 
-- new font
-- nicer shadows
 - select field could be from a component library
 - nicer player
+- guest route --> what features does the registered route has? could save moods, moodtracker
 
 ### DONE
 
@@ -67,3 +47,14 @@
 - create user signup page and form
 - create user login page and form
 - submit the user information to the backend (post request)
+- remove button shadow
+- style login and signup
+- use button component inside singup and login field
+- make Layout with moodfood top / conditionally render: when logged in Good Evening etc, when not logged in only moodfood and login page
+  **User authentication**
+
+- verify user
+- hash password
+- create token
+- set cookies
+- fix navigateHome Route in frontend
