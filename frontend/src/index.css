@@ -3,20 +3,14 @@
 @tailwind utilities;
 
 :root {
-    --morning-bg-color: #CFFAFE; /* Example color for morning */
-    --afternoon-bg-color: #FFFFFF; /* Example color for afternoon */
-    --evening-bg-color: #2B2E4A; /* Example color for evening */
-    --default-bg-color: #ECE9E6;  /* Default background color */
+	--morning-bg-color: #cffafe; /* Example color for morning */
+	--afternoon-bg-color: #ffffff; /* Example color for afternoon */
+	--evening-bg-color: #2b2e4a; /* Example color for evening */
+	--default-bg-color: #ece9e6; /* Default background color */
 }
 
-/* .morning {
-    @apply bg-yellow-100 text-yellow-600;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
-
-.afternoon {
-    @apply bg-orange-100 text-orange-600;
-}
-
-.evening {
-    @apply bg-purple-100 text-purple-600;
-} */

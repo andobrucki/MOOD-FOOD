@@ -26,13 +26,7 @@ const TimeOfDay = () => {
 		// Set the time of day in the state
 		const timeOfDay = getTimeOfDay();
 		moodDispatch({ type: 'SET_TIME_OF_DAY', payload: timeOfDay });
-		console.log(
-			'Greetings: ',
-			greetings,
-			'Greetings(state): ',
-			greetings[timeOfDay]
-		);
-
+		
 		// Set the body class based on time of day
 		document.body.className = ''; // Reset existing classes
 		document.body.classList.add(timeOfDay); // Add the time of day class

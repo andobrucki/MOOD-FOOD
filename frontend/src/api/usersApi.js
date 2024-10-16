@@ -11,34 +11,34 @@ export const signup = async (userDispatch, formData) => {
 		userDispatch({ type: 'LOGIN_SUCCESS', payload: response.data });
 		return { success: true };
 	} catch (error) {
-		console.log('Error during singup:', error);
+		console.log('Error during signup:', error);
 		console.log(formData);
 		return { success: false, error };
 	}
 };
 
-// export const login = async (userDispatch, formData) => {
-// 	try {
-// 		const response = await axios.post('/users/login', formData, {
-// 			withCredentials: true,
-// 		});
+export const login = async (userDispatch, formData) => {
+	try {
+		const response = await axios.post('/users/login', formData, {
+			withCredentials: true,
+		});
 
-// 		userDispatch({ type: 'LOGIN_SUCCESS', payload: response.data });
-// 	} catch (error) {
-// 		console.log(error);
-// 	}
-// };
+		userDispatch({ type: 'LOGIN_SUCCESS', payload: response.data });
+	} catch (error) {
+		console.log(error);
+	}
+};
 
-// export const logout = async (userDispatch) => {
-// 	try {
-// 		await axios.get('/users/logout', {
-// 			withCredentials: true,
-// 		});
-// 		userDispatch({ type: 'LOGOUT' });
-// 	} catch (error) {
-// 		console.log(error);
-// 	}
-// };
+export const logout = async (userDispatch) => {
+	try {
+		await axios.get('/users/logout', {
+			withCredentials: true,
+		});
+		userDispatch({ type: 'LOGOUT' });
+	} catch (error) {
+		console.log(error);
+	}
+};
 
 // export const getMyData = async (userDispatch) => {
 // 	try {
