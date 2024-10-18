@@ -17,6 +17,7 @@ const Hello = () => {
 			<Button
 				label={'Register'}
 				onClick={handleSignupDirect}
+				isActive={true}
 				className="bg-gray-800 text-white hover:bg-gray-700 w-24"
 				style={{}}
 			/>
