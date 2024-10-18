@@ -19,8 +19,8 @@
 - create error handling on login and register in frontend not only console log
 - create pop up (for additional features / track your mood please login)
 - form validation
-
 - if going back to home page, page should re-render and offer moodpicker again
+- edit README
 
 # nice to have
 

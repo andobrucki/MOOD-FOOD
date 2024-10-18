@@ -1,7 +1,17 @@
-import React, { useState } from "react";
+import Select from 'react-select';
 
-const App = () => {
-    const [open, setOpen] = useState(false);
+function Dropdown() {
+	const options = [
+		{ value: 'apple', label: 'Apple' },
+		{ value: 'pineapple', label: 'Pineapple' },
+		{ value: 'watermelon', label: 'Watermelon' },
+	];
 
-    const handleOpen = () => 
+	return (
+		<div>
+			<Select options={options} />
+		</div>
+	);
 }
+
+export default Dropdown;

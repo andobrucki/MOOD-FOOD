@@ -6,6 +6,8 @@ https://mood-food.onrender.com/
 
 MOOD FOOD is an application created using React, React Hooks, Context API and React Router. The Routes were setup for one default page and three more pages. Axios and fetch were used to fetch data from three APIS: Advice Slip JSON API, Wikipedia API and YouTube API.
 
+In addition a backend has been created using
+
 ## About
 
 MOOD FOOD is an app designed to respond to your current mood with activity suggestions. The app uses eight key emotions derived from the Wheel of Emotions by American psychologist Robert Plutchik.
