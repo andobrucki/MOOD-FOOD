@@ -12,9 +12,14 @@ const Hello = () => {
 	};
 
 	return (
-		<div className="signup-form-container flex flex-col space-y-4 ">
-			<Button label={'Login'} onClick={handleLoginDirect} />
-			<Button label={'Sign Up'} onClick={handleSignupDirect} />
+		<div className="signup-form-container flex flex-col space-y-4 mt-40 items-center ">
+			<Button label={'Login'} onClick={handleLoginDirect} className="w-24" />
+			<Button
+				label={'Register'}
+				onClick={handleSignupDirect}
+				className="bg-gray-800 text-white hover:bg-gray-700 w-24"
+				style={{}}
+			/>
 		</div>
 	);
 };

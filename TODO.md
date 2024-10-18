@@ -16,10 +16,11 @@
 ## Frontend
 
 - create logout frontend
+- create error handling on login and register in frontend not only console log
+- create pop up (for additional features / track your mood please login)
 - form validation
-- fix: time of day from context should be received by layout component and render background accordingly
+
 - if going back to home page, page should re-render and offer moodpicker again
-- fix login on frontend
 
 # nice to have
 
@@ -58,3 +59,8 @@
 - create token
 - set cookies
 - fix navigateHome Route in frontend
+
+- change functionality:
+
+1. Landing page: Moodfood / change protected and public routes / make all public
+2. create Login and Sign up button

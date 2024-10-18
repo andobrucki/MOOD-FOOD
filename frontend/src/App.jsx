@@ -33,43 +33,14 @@ const App = () => {
 						<Routes>
 							{/* Public Routes */}
 							<Route element={<Layout />}>
-								<Route path="/hello" element={<Hello />} />
+								{/* <Route path="/hello" element={<Hello />} /> */}
+
+								<Route path="/" element={<Home />} />
+								<Route path="/advice" element={<FetchAdvice />} />
+								<Route path="/music" element={<MusicPlayer />} />
+								<Route path="/learn-more" element={<FetchInfo />} />
 								<Route path="/signup" element={<Signup />} />
 								<Route path="/login" element={<Login />} />
-
-								{/* Private Routes */}
-								<Route
-									path="/"
-									element={
-										<PrivateRoute>
-											<Home />
-										</PrivateRoute>
-									}
-								/>
-								<Route
-									path="/advice"
-									element={
-										<PrivateRoute>
-											<FetchAdvice />
-										</PrivateRoute>
-									}
-								/>
-								<Route
-									path="/music"
-									element={
-										<PrivateRoute>
-											<MusicPlayer />
-										</PrivateRoute>
-									}
-								/>
-								<Route
-									path="/learn-more"
-									element={
-										<PrivateRoute>
-											<FetchInfo />
-										</PrivateRoute>
-									}
-								/>
 							</Route>
 						</Routes>
 					</div>
