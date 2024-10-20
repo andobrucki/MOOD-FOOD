@@ -6,7 +6,8 @@ https://mood-food.onrender.com/
 
 MOOD FOOD is an application created using React, React Hooks, Context API and React Router. The Routes were setup for one default page and three more pages. Axios and fetch were used to fetch data from three APIS: Advice Slip JSON API, Wikipedia API and YouTube API.
 
-In addition a backend has been created using
+In addition a backend has been created for login, register and logout functionality.
+The frontend part is currently deployed, the backend not.
 
 ## About
 
@@ -47,3 +48,8 @@ Set up three options: the user can choose to retrieve info from three APIs:
 - Advice Slip JSON API, Wikipedia API and YouTube API
 - React Player
 - Tailwind CSS
+- Node.js
+- Express
+- MongoDB
+- Mongoose
+- JWT, bcrypt, cors, dotenv, cookie parser, http-errors
