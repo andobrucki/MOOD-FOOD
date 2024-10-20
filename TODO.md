@@ -10,17 +10,10 @@
 - once ready, merge the branch back into main and deploy the changes
 
 ## Backend
-
-- validation and sanitation
+- validation and sanitation > check if user exists 
 
 ## Frontend
-
-- create logout frontend
-- create error handling on login and register in frontend not only console log
-- create select field
 - create pop up (for additional features / track your mood please login)
-- form validation
-- if going back to home page, page should re-render and offer moodpicker again
 - edit README
 
 # nice to have
@@ -65,3 +58,6 @@
 
 1. Landing page: Moodfood / change protected and public routes / make all public
 2. create Login and Sign up button
+- create logout frontend
+- if going back to home page, page should re-render and offer moodpicker again
+- create error handling on login and register in frontend 
