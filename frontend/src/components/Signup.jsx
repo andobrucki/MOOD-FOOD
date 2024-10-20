@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 import { DataContext } from '../context/Context';
 import Form from '../components/Form';
-import Button from './Button';
 import { signup } from '../api/usersApi';
 import { useNavigate } from 'react-router-dom';
 
@@ -12,10 +11,6 @@ const Signup = () => {
 	const handleRegister = async (formData) => {
 		await signup(userDispatch, formData);
 		navigate('/');
-	};
-
-	const handleLoginDirect = () => {
-		navigate('/login');
 	};
 
 	const inputs = [

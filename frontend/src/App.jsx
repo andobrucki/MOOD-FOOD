@@ -13,11 +13,10 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { DataProvider } from './context/Context';
-import PrivateRoute from './components/PrivateRoute';
+// import PrivateRoute from './components/PrivateRoute';
 import Home from './components/Home';
 import Signup from './components/Signup';
 import Login from './components/Login';
-import Hello from './components/Hello';
 import FetchAdvice from './components/FetchAdvice';
 import FetchInfo from './components/FetchInfo';
 import MusicPlayer from './components/MusicPlayer';

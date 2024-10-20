@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import TimeOfDay from './TimeOfDay';
 import MoodForm from './MoodPickerForm';
-import Hello from './Hello';
+import LoginRegister from './LoginRegister';
 import { MoodDisplay } from './MoodDisplay';
 import MoodPrompt from './MoodPrompt';
 // import Dropdown from './Dropdown';
@@ -15,8 +15,8 @@ const Home = () => {
 			<MoodForm />
 			<MoodDisplay />
 			{moodState.mood && <MoodPrompt />}
-			<Hello/>
-{/* <Dropdown/> */}
+			<LoginRegister />
+			{/* <Dropdown/> */}
 		</div>
 	);
 };

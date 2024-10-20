@@ -1,11 +1,13 @@
 import { useNavigate } from 'react-router-dom';
-
-//! Header component
+import { useContext } from 'react';
+import { DataContext } from '../context/Context';
 
 const Header = () => {
+	const { moodDispatch } = useContext(DataContext);
 	const navigate = useNavigate();
 
 	const handleNavigateHome = () => {
+		moodDispatch({ type: 'RESET_MOOD' });
 		navigate('/');
 	};
 

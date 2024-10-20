@@ -10,7 +10,7 @@ export const moodInitialState = {
 		angry: '#ef4444',
 		excited: '#fb923c',
 	}, // Stores the colors associated with each mood
-	timeOfDay: '',// Stores the current time of day (morning, afternoon, or evening)
+	timeOfDay: '', // Stores the current time of day (morning, afternoon, or evening)
 	nextStep: '',
 	videoId: '', // Stores the video ID for the music player
 };
@@ -22,6 +22,11 @@ export const moodReducer = (state, action) => {
 			return {
 				...state,
 				mood: action.payload,
+			};
+		case 'RESET_MOOD':
+			return {
+				...state,
+				mood: null,
 			};
 		case 'SET_TIME_OF_DAY':
 			return { ...state, timeOfDay: action.payload }; // Set the time of day

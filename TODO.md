@@ -17,6 +17,7 @@
 
 - create logout frontend
 - create error handling on login and register in frontend not only console log
+- create select field
 - create pop up (for additional features / track your mood please login)
 - form validation
 - if going back to home page, page should re-render and offer moodpicker again
